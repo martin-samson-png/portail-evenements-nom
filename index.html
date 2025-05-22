@@ -25,6 +25,22 @@
         <div>
           <h2>Événements en cours</h2>
         </div>
+        <template id="eventTemplate">
+          <div class="">
+            <h3 class="titleTemplate"></h3>
+            <div>
+              <button class="hidden">x</button>
+              <p class="descriptionTemplate"></p>
+            </div>
+            <div class="dateTemplate"></div>
+            <div class="placeTemplate"></div>
+            <div class="urlTemplate"></div>
+            <div>
+              <button id="detailBtn">Voir détails</button>
+              <button id="addBtn">Ajouter</button>
+            </div>
+          </div>
+        </template>
         <div id="planningList"></div>
       </section>
       <section id="myPlanning">
