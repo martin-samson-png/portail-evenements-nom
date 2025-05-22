@@ -6,7 +6,7 @@
       crossorigin="anonymous"
     ></script>
     <link rel="stylesheet" href="styles/style.css" />
-    <script src="script.js" defer></script>
+    <script src="/script/script.js" defer></script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>portail-evenement</title>
@@ -21,28 +21,30 @@
       </section>
     </header>
     <main>
-      <section id="eventList">
+      <section id="eventList" class="z-index-1">
         <div>
           <h2>Événements en cours</h2>
         </div>
+
         <template id="eventTemplate">
-          <div class="">
+          <div class="eventCard">
             <h3 class="titleTemplate"></h3>
+            <button class="closeBtn hidden">x</button>
             <div>
-              <button class="hidden">x</button>
-              <p class="descriptionTemplate"></p>
+              <p class="descriptionTemplate hidden"></p>
             </div>
             <div class="dateTemplate"></div>
             <div class="placeTemplate"></div>
-            <div class="urlTemplate"></div>
+            <div><a class="urlTemplate hidden" href=""></a></div>
             <div>
-              <button id="detailBtn">Voir détails</button>
-              <button id="addBtn">Ajouter</button>
+              <button class="detailBtn">Voir détails</button>
+              <button class="addBtn">Ajouter</button>
             </div>
           </div>
         </template>
-        <div id="planningList"></div>
+        <div id="eventList"></div>
       </section>
+      <section id="modale">azzerzerzERZERZE</section>
       <section id="myPlanning">
         <div>
           <h2>Mon planning</h2>
