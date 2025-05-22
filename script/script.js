@@ -37,34 +37,51 @@ document.addEventListener("DOMContentLoaded", () => {
         clone.querySelector(".placeTemplate").textContent = placeEvent;
         clone.querySelector(".urlTemplate").textContent = urlEvent;
 
-        // création des boutons dans le DOM
-        const detailBtn = clone.querySelector(".detailBtn");
+        //reclonage des éléments dans la section "mon planning"
         const addBtn = clone.querySelector(".addBtn");
-        const modale = document.getElementById("modale");
+        addBtn.addEventListener("click", () => {
+          let storedData = JSON.parse(localStorage.getItem("planedData")) || [];
+          storedData.push({
+            title: titleEvent,
+            description: descriptionEvent,
+            date: dateEvent,
+            place: placeEvent,
+            url: urlEvent,
+          });
+          localStorage.setItem("planedData", JSON.stringify(storedData));
+          const planedClone = template.content.cloneNode(true);
+          planedClone.querySelector(".titleTemplate").textContent = titleEvent;
+          planedClone.querySelector(".dateTemplate").textContent = dateEvent;
+          planedClone.querySelector(".placeTemplate").textContent = placeEvent;
 
-        addBtn?.addEventListener("click", () => {
-          if (addBtn.textContent === "Ajouter") {
-            const planedClone = template.content.cloneNode(true);
-            planedClone.querySelector(".titleTemplate").textContent =
-              titleEvent;
-            planedClone.querySelector(".dateTemplate").textContent = dateEvent;
-            planedClone.querySelector(".placeTemplate").textContent =
-              placeEvent;
+          const deleteBtn = planedClone.querySelector(".addBtn");
+          deleteBtn.textContent = "Supprimer";
 
-            const deleteBtn = planedClone.querySelector(".addBtn");
-            deleteBtn.textContent = "Supprimer";
+          myPlanning.appendChild(planedClone);
 
-            myPlanning?.appendChild(planedClone);
-
-            // Ajout de l'écouteur d'événement pour le bouton "Supprimer"
-            deleteBtn.addEventListener("click", () => {
-              deleteBtn.closest(".eventCard").remove();
-            });
-          }
+          deleteBtn.addEventListener("click", () => {
+            deleteBtn.closest(".eventCard").remove();
+          });
         });
 
+        //reclonage des éléments dans la modale
+        const detailBtn = clone.querySelector(".detailBtn");
+        const modale = document.getElementById("modale");
         detailBtn.addEventListener("click", () => {
+          const modaleClone = template.content.cloneNode(true);
+          modaleClone.querySelector(".titleTemplate").textContent = titleEvent;
+          modaleClone.querySelector(".descriptionTemplate").style.display =
+            "flex";
+          modaleClone.querySelector(".descriptionTemplate").textContent =
+            descriptionEvent;
+          modaleClone.querySelector(".dateTemplate").textContent = dateEvent;
+          modaleClone.querySelector(".placeTemplate").textContent = placeEvent;
+          modaleClone.querySelector(".urlTemplate").style.display = "flex";
+          modaleClone.querySelector(".urlTemplate").textContent = urlEvent;
           modale.style.display = "flex";
+          modaleClone.querySelector(".detailBtn").style.display = "none";
+          modaleClone.querySelector(".addBtn").style.display = "none";
+          modale.appendChild(modaleClone);
         });
 
         eventList.appendChild(clone);
