@@ -6,6 +6,7 @@
       crossorigin="anonymous"
     ></script>
     <link rel="stylesheet" href="styles/style.css" />
+    <script src="/script/localStorage.js" defer></script>
     <script src="/script/script.js" defer></script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -29,7 +30,7 @@
         <template id="eventTemplate">
           <div class="eventCard">
             <h3 class="titleTemplate"></h3>
-            <button class="closeBtn hidden">x</button>
+            <button class="closeBtn">x</button>
             <div>
               <p class="descriptionTemplate"></p>
             </div>
@@ -38,17 +39,31 @@
             <div><a class="urlTemplate" href=""></a></div>
             <div>
               <button class="detailBtn">Voir détails</button>
-              <button class="addBtn">Ajouter</button>
+              <button type="submit" class="addBtn">Ajouter</button>
             </div>
           </div>
         </template>
         <div id="eventList"></div>
       </section>
       <section id="modale"></section>
-      <section id="myPlanning">
+      <section id="favoris">
         <div>
-          <h2>Mon planning</h2>
+          <h2>Mes favoris</h2>
         </div>
+        <template id="favTemplate">
+          <div class="favCard">
+            <h3 class="favTitle"></h3>
+            <button class="favCloseBtn">x</button>
+            <div>
+              <p class="favDesc"></p>
+            </div>
+            <div class="favDate"></div>
+            <div class="favPlace"></div>
+            <div><a class="favUrl" href="">Liens vers l'événements</a></div>
+            <div>
+              <button class="favDetailBtn">Voir détails</button>
+              <button type="submit" class="favSuppBtn">Supprimer</button>
+            </div>
       </section>
     </main>
   </body>

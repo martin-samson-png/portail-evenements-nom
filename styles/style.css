@@ -2,11 +2,11 @@
   display: none;
 }
 #modale {
-  background-color: rgba(0, 0, 0, 0.5); /* Fond semi-transparent */
+  background-color: rgba(0, 0, 0, 0.5); 
   display: none;
   justify-content: center;
   align-items: center;
-  position: fixed; /* Position fixe par rapport à la fenêtre */
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -19,4 +19,8 @@
 .z-index-1 {
   position: relative;
   z-index: 1;
+}
+
+.closeBtn{
+  display: none;
 }
