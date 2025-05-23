@@ -14,30 +14,29 @@
   </head>
   <body>
     <header>
-      <section>
+      <section class="titre">
         <h1>Événements WordPress</h1>
       </section>
-      <section>
+      <section class="dark-mod">
         <button class=""><i class="fa-solid fa-circle-half-stroke"></i></button>
       </section>
     </header>
     <main>
       <section id="eventList" class="z-index-1">
-        <div>
+        <div class="sous-titre">
           <h2>Événements en cours</h2>
         </div>
-
         <template id="eventTemplate">
           <div class="eventCard">
-            <h3 class="titleTemplate"></h3>
             <button class="closeBtn">x</button>
-            <div>
-              <p class="descriptionTemplate"></p>
-            </div>
+            <h3 class="titleTemplate"></h3>
+            <div class="info">
+            <p class="descriptionTemplate"></p>         
             <div class="dateTemplate"></div>
             <div class="placeTemplate"></div>
             <div><a class="urlTemplate" href=""></a></div>
-            <div>
+            </div>
+            <div class="eventBtn">
               <button class="detailBtn">Voir détails</button>
               <button type="submit" class="addBtn">Ajouter</button>
             </div>
@@ -45,22 +44,24 @@
         </template>
         <div id="eventList"></div>
       </section>
-      <section id="modale"></section>
+      <section id="modale">
+        <div id="divModale"></div>
+      </section>
       <section id="favoris">
-        <div>
+        <div class="sous-titre">
           <h2>Mes favoris</h2>
         </div>
         <template id="favTemplate">
           <div class="favCard">
-            <h3 class="favTitle"></h3>
-            <button class="favCloseBtn">x</button>
-            <div>
-              <p class="favDesc"></p>
+             <button class="favCloseBtn">x</button>
+            <h3 class="favTitle"></h3>         
+            <div class="favInfo">
+              <p class="favDesc"></p>     
+              <div class="favDate"></div>
+              <div class="favPlace"></div>
+              <a class="favUrl" href="">Liens vers l'événements</a>
             </div>
-            <div class="favDate"></div>
-            <div class="favPlace"></div>
-            <div><a class="favUrl" href="">Liens vers l'événements</a></div>
-            <div>
+            <div class="favBtn">
               <button class="favDetailBtn">Voir détails</button>
               <button type="submit" class="favSuppBtn">Supprimer</button>
             </div>

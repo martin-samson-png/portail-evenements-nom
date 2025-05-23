@@ -57,6 +57,7 @@ const fetchData = fetch(
       //reclonage des éléments dans la modale
       const detailBtn = clone.querySelector(".detailBtn");
       const modale = document.getElementById("modale");
+      const divModale = document.getElementById("divModale");
       detailBtn.addEventListener("click", () => {
         const modaleClone = template.content.cloneNode(true);
         modaleClone.querySelector(".titleTemplate").textContent = titleEvent;
@@ -67,15 +68,16 @@ const fetchData = fetch(
         modaleClone.querySelector(".dateTemplate").textContent = dateEvent;
         modaleClone.querySelector(".placeTemplate").textContent = placeEvent;
         modaleClone.querySelector(".urlTemplate").style.display = "flex";
-        modaleClone.querySelector(".urlTemplate").textContent = urlEvent;
-        modale.style.display = "flex";
+        modaleClone.querySelector(".urlTemplate").href = urlEvent;
+        modaleClone.querySelector(".urlTemplate").textContent =
+          "Lien vers l'évenement";
         modaleClone.querySelector(".closeBtn").style.display = "flex";
         modaleClone.querySelector(".detailBtn").style.display = "none";
         modaleClone.querySelector(".addBtn").style.display = "none";
 
         const closeBtn = modaleClone.querySelector(".closeBtn");
-
-        modale.appendChild(modaleClone);
+        modale.style.display = "flex";
+        divModale.appendChild(modaleClone);
 
         closeBtn.addEventListener("click", () => {
           closeBtn.closest(".eventCard").remove();

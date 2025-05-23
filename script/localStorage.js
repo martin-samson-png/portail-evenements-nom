@@ -14,6 +14,7 @@ storedData.forEach((data, index) => {
 
   // Bouton Détails
   const favDetailBtn = favClone.querySelector(".favDetailBtn");
+  const divModale = document.getElementById("divModale");
   favDetailBtn.addEventListener("click", () => {
     const favModale = favTemplate.content.cloneNode(true);
     favModale.querySelector(".favTitle").textContent = data.title;
@@ -21,6 +22,7 @@ storedData.forEach((data, index) => {
     favModale.querySelector(".favDesc").textContent = data.description;
     favModale.querySelector(".favDate").textContent = `Date: ${data.date}`;
     favModale.querySelector(".favPlace").textContent = `Lieu: ${data.place}`;
+    favModale.querySelector(".favUrl").style.display = "flex";
     favModale.querySelector(".favUrl").href = data.url;
     favModale.querySelector(".favUrl").textContent = "Lien vers l'événement";
     favModale.querySelector(".favDetailBtn").style.display = "none";
@@ -28,11 +30,11 @@ storedData.forEach((data, index) => {
     favModale.querySelector(".favCloseBtn").style.display = "flex";
     const favCloseBtn = favModale.querySelector(".favCloseBtn");
     modale.style.display = "flex";
-    modale.appendChild(favModale);
+    divModale.appendChild(favModale);
 
     favCloseBtn.addEventListener("click", () => {
       modale.style.display = "none";
-      modale.removeChild(favModale);
+      favCloseBtn.closest(".favCard").remove();
     });
   });
 
