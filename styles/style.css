@@ -4,7 +4,15 @@ body{
   margin: 0;
   padding: 0;
   font-size: 20px;
+  background-color: var(--light-mode);
 }
+
+.dark-mode {
+    background-color: var(--dark-mode);
+}
+
+/* Ajoutez d'autres styles pour le mode sombre selon vos besoins */
+
 /* --------------------------------------HEADER---------------------------------- */
 header{
   background-color: var(--main-color);
@@ -20,7 +28,7 @@ header{
   justify-content: center;
 }
 
-.dark-mod {
+.mode-sombre {
   display: flex;
   align-items: center;
 }
@@ -42,7 +50,6 @@ header > section > button:hover{
 main {
   display: flex;
   flex-direction: column;
-  background-color: var(--light-mode);
   padding: 3rem;
   gap: 5rem;
 }

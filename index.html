@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="styles/style.css" />
     <script src="/script/localStorage.js" defer></script>
     <script src="/script/script.js" defer></script>
+    <script src="/script/cookies.js" defer></script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>portail-evenement</title>
@@ -17,8 +18,8 @@
       <section class="titre">
         <h1>Événements WordPress</h1>
       </section>
-      <section class="dark-mod">
-        <button class=""><i class="fa-solid fa-circle-half-stroke"></i></button>
+      <section class="mode-sombre">
+        <button id="buttonDarkMode"><i class="fa-solid fa-circle-half-stroke"></i></button>
       </section>
     </header>
     <main>
@@ -31,7 +32,7 @@
             <button class="closeBtn">x</button>
             <h3 class="titleTemplate"></h3>
             <div class="info">
-            <p class="descriptionTemplate"></p>         
+            <p class="descriptionTemplate"></p>
             <div class="dateTemplate"></div>
             <div class="placeTemplate"></div>
             <div><a class="urlTemplate" href=""></a></div>
@@ -54,9 +55,9 @@
         <template id="favTemplate">
           <div class="favCard">
              <button class="favCloseBtn">x</button>
-            <h3 class="favTitle"></h3>         
+            <h3 class="favTitle"></h3>
             <div class="favInfo">
-              <p class="favDesc"></p>     
+              <p class="favDesc"></p>
               <div class="favDate"></div>
               <div class="favPlace"></div>
               <a class="favUrl" href="">Liens vers l'événements</a>
